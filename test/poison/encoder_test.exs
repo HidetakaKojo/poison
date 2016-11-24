@@ -37,6 +37,7 @@ defmodule Poison.EncoderTest do
     assert to_json(%{}) == "{}"
     assert to_json(%{foo: :bar}) == ~s({"foo":"bar"})
     assert to_json(%{"foo" => "bar"})  == ~s({"foo":"bar"})
+    assert to_json(%{1475786353 => "ts"})  == ~s({"1475786353":"ts"})
     assert to_json(%{foo: %{bar: %{baz: "baz"}}}, pretty: true) == """
     {
       "foo": {
